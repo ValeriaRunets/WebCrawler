@@ -40,14 +40,17 @@ public class ReadingWritingHelper {
             if (val++ == 10) {
                 break;
             }
+            System.out.print(it.getKey()+" ");
             String[] line = new String[words.size() + 2];
             line[0] = it.getKey();
             int i = 1;
             int res = 0;
             for (String word : words) {
+                System.out.print(map.get(it.getKey()).getOrDefault(word, 0).toString()+" ");
                 line[i++] = map.get(it.getKey()).getOrDefault(word, 0).toString();
                 res += map.get(it.getKey()).getOrDefault(word, 0);
             }
+            System.out.println(res);
             line[line.length - 1] = Integer.toString(res);
             lines.add(line);
         }
